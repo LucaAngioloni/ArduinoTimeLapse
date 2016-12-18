@@ -10,3 +10,8 @@ Default is set to 5 seconds.
 
 The final setup looks like this:
 [![Final Setup](https://s27.postimg.org/z0lf8jaz7/2016_05_28_19_33_25.jpg)](https://postimg.org/image/e3p73vcy7/)
+
+Arduino has a normal LED connected to pin 5 (you can change it throug `LEDPin`) with a small resistence, and an IR LED connected to pin 3 (you can change it throug `IRPin`) also with a small resistence.
+
+The IR LED should be directed to the IR sensor of the camera.
+The colored LED signals to the user the moment the IR signal is sent.
