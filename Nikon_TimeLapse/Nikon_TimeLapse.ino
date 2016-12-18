@@ -13,7 +13,8 @@
    limitations under the License.
 */
 
-  #define LEDPin 3
+  #define LEDPin 5
+  #define IRPin 3
   #define FREQ 38400  // IR frequence
   #define LapseTime 5000 //time between each shot in milliseconds. Should be > 500
    
@@ -37,9 +38,9 @@
   void snap(){
     int i;
     for(i=0;i<seq_l;i++){
-      oscillate(LEDPin, sequence[i], i%2==0);
+      oscillate(IRPin, sequence[i], i%2==0);
     }
-    digitalWrite(LEDPin,  0);
+    digitalWrite(IRPin,  0);
   }
    
   void setup() {  
@@ -51,7 +52,7 @@
     seq_l = sizeof(sequence)/sizeof(unsigned long);
    
     pinMode(LEDPin, OUTPUT);
-    pinMode(5, OUTPUT);
+    pinMode(IRPin, OUTPUT);
    
     //this "while" will process the best "oscd"
     while(last_oscd!=oscd){
@@ -59,7 +60,7 @@
       oscd=(min+max)>>1;
    
       before=millis();
-      oscillate(LEDPin, FREQ, 1);
+      oscillate(IRPin, FREQ, 1);
       intervalle=millis()-before;
    
       if(intervalle >= 1000) max=oscd;
@@ -74,9 +75,9 @@
    
    
   void loop() {
-    digitalWrite(5, HIGH);
+    digitalWrite(LEDPin, HIGH);
     snap();
     delay(500);
-    digitalWrite(5, LOW);
+    digitalWrite(LEDPin, LOW);
     delay(LapseTime-500);
   }
