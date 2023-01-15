@@ -12,7 +12,7 @@ The final setup looks like this:
 
 ![ArduinoSetup](./images/Nikon_Time_Lapse.png)
 
-Arduino has a normal LED connected to pin 5 (you can change it throug `LEDPin`) with a small resistence, and an IR LED connected to pin 3 (you can change it throug `IRPin`) also with a small resistence.
+Arduino has a normal LED connected to pin 5 (you can change it throug `LEDPin`) with a small resistance, and an IR LED connected to pin 3 (you can change it throug `IRPin`) also with a small resistance.
 
 The IR LED should be directed to the IR sensor of the camera.
 The colored LED signals to the user the moment the IR signal is sent.
